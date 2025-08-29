@@ -1,39 +1,28 @@
 
-//print the maximum subarray sum-1 (Brute Force)
-
+import java.util.ArrayList;
 public class max 
 {
-   public static void maxsumsubarray(int num[])
-   {
-    int currsum=0;
-    int max=Integer.MIN_VALUE;
-    
-    for(int i=0; i<num.length; i++)
+    public static void main(String args[])
     {
-        int start=i;
-        for(int j=i; j<num.length; j++)
-        {
-            int end=j;
-            currsum=0;
-            for(int k=start; k<=end; k++)
-            {
-                currsum=currsum+num[k];
-            }
-            System.out.println(currsum);
-            if(max<currsum)
-            {
-               max=currsum;
-            }
-           
-        }
-        System.out.println();
-    }
-    System.out.println("Maximum of sum="+max);
+        ArrayList<Integer> list=new ArrayList<>();
+        list.add(2);
+        list.add(5);
+        list.add(9);
+        list.add(3);
+        list.add(6);
 
-   }
-   public static void main(String args[])
-   {
-    int num[]={2,4,6,8};
-    maxsumsubarray(num);
-   } 
+        System.out.println(list.size());
+
+       int max=Integer.MIN_VALUE;
+       for(int i=0; i<list.size(); i++)
+       {
+        if(max<list.get(i))
+        {
+            max=list.get(i);
+        }
+        //or
+        //max=Math.max(max,list.get(i));
+       }
+       System.out.println("max element:"+max);
+    }
 }
